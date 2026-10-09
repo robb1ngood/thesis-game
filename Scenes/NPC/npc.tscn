@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://g7ixwp3dbs6k"]
+
+[ext_resource type="Texture2D" uid="uid://dbaos6llrytuv" path="res://Ninja Adventure - Asset Pack/Actor/Characters/Boy/SpriteSheet.png" id="1_3am0f"]
+[ext_resource type="Script" uid="uid://didlp8rborap2" path="res://Scenes/NPC/npc.gd" id="1_bjna2"]
+[ext_resource type="Texture2D" uid="uid://dxnn8kubdinmb" path="res://Ninja Adventure - Asset Pack/Ui/Dialog/DialogBoxFaceset.png" id="3_0s07e"]
+[ext_resource type="Texture2D" uid="uid://cw744hrpc5ty6" path="res://Ninja Adventure - Asset Pack/Actor/Characters/Boy/Faceset.png" id="4_aqj1y"]
+[ext_resource type="AudioStream" uid="uid://onlfep2440pj" path="res://Ninja Adventure - Asset Pack/Sounds/Game/MiniImpact.wav" id="5_n8r46"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjna2"]
+atlas = ExtResource("1_3am0f")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s07e"]
+size = Vector2(14, 14)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n8r46"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_aqj1y"]
+font_size = 20
+
+[node name="NPC" type="StaticBody2D" unique_id=347314837 groups=["interactable"]]
+process_mode = 3
+script = ExtResource("1_bjna2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1144072999]
+texture = SubResource("AtlasTexture_bjna2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=750603703]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_0s07e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1590946440]
+visible = false
+
+[node name="DialogueBoxTexture" type="TextureRect" parent="CanvasLayer" unique_id=179547376]
+offset_left = 20.000015
+offset_top = 415.00003
+offset_right = 320.0
+offset_bottom = 473.00003
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("3_0s07e")
+
+[node name="NPCIcon" type="TextureRect" parent="CanvasLayer/DialogueBoxTexture" unique_id=1597987461]
+layout_mode = 0
+offset_left = 5.135132
+offset_top = 12.972963
+offset_right = 45.13513
+offset_bottom = 52.97296
+texture = ExtResource("4_aqj1y")
+
+[node name="DialogueLabel" type="Label" parent="CanvasLayer" unique_id=81479563]
+offset_left = 219.0
+offset_top = 465.0
+offset_right = 1092.0
+offset_bottom = 585.0
+text = "Hello, World!"
+label_settings = SubResource("LabelSettings_n8r46")
+autowrap_mode = 3
+
+[node name="NameLabel" type="Label" parent="CanvasLayer" unique_id=194340707]
+offset_left = 40.0
+offset_top = 421.0
+offset_right = 269.0
+offset_bottom = 460.0
+text = "Boy"
+label_settings = SubResource("LabelSettings_aqj1y")
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=371846034]
+stream = ExtResource("5_n8r46")

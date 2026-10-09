@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cex2tbl7di5k1"]
+
+[ext_resource type="Script" uid="uid://w1hgpunl232y" path="res://Scenes/TreasureChest/treasure_chest.gd" id="1_2tkyh"]
+[ext_resource type="Texture2D" uid="uid://chb4bvd4ie0uh" path="res://Ninja Adventure - Asset Pack/Items/Treasure/BigTreasureChest.png" id="1_v1qrq"]
+[ext_resource type="Texture2D" uid="uid://co5y5x5atr0oj" path="res://Ninja Adventure - Asset Pack/Items/Scroll/ScrollEmpty.png" id="3_sdjdt"]
+[ext_resource type="AudioStream" uid="uid://2ksk0w6w5md4" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Fx.wav" id="4_2a6ve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tkyh"]
+size = Vector2(16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdjdt"]
+atlas = ExtResource("1_v1qrq")
+region = Rect2(0, 0, 16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a6ve"]
+atlas = ExtResource("1_v1qrq")
+region = Rect2(16, 0, 16, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vnph0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdjdt")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a6ve")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="TreasureChest" type="StaticBody2D" unique_id=737068780 groups=["interactable"]]
+script = ExtResource("1_2tkyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=372729341]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_2tkyh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=487381002]
+sprite_frames = SubResource("SpriteFrames_vnph0")
+animation = &"closed"
+autoplay = "closed"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=478415117]
+visible = false
+position = Vector2(0, -13)
+texture = ExtResource("3_sdjdt")
+
+[node name="Timer" type="Timer" parent="." unique_id=1030664774]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=435083521]
+stream = ExtResource("4_2a6ve")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
