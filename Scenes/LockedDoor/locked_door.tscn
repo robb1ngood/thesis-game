@@ -8,7 +8,7 @@ size = Vector2(16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0g7ru"]
 atlas = ExtResource("1_vst31")
-region = Rect2(32, -0.054, 16, 14)
+region = Rect2(32.240276, 48.093296, 15.633408, 15.784496)
 
 [node name="LockedDoor" type="StaticBody2D" unique_id=619921547]
 script = ExtResource("1_aukdc")

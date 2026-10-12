@@ -17,10 +17,10 @@ func _process(delta):
 func open_chest():
 	is_open = true
 	$AnimatedSprite2D.play("open")
-	$Sprite2D.visible = true
+	$AnimatedSprite2D2.visible = true
 	$Timer.start()
 	SceneManager.opened_chests.append(chest_name)
 	$AudioStreamPlayer2D.play()
 
 func _on_timer_timeout() -> void:
-	$Sprite2D.visible = false
+	$AnimatedSprite2D2.visible = false

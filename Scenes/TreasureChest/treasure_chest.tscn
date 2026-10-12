@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://w1hgpunl232y" path="res://Scenes/TreasureChest/treasure_chest.gd" id="1_2tkyh"]
 [ext_resource type="Texture2D" uid="uid://chb4bvd4ie0uh" path="res://Ninja Adventure - Asset Pack/Items/Treasure/BigTreasureChest.png" id="1_v1qrq"]
-[ext_resource type="Texture2D" uid="uid://co5y5x5atr0oj" path="res://Ninja Adventure - Asset Pack/Items/Scroll/ScrollEmpty.png" id="3_sdjdt"]
+[ext_resource type="Texture2D" uid="uid://dton5rc0ar5as" path="res://Ninja Adventure - Asset Pack/Items/Treasure/Coin2.png" id="3_2a6ve"]
 [ext_resource type="AudioStream" uid="uid://2ksk0w6w5md4" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Fx.wav" id="4_2a6ve"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2tkyh"]
@@ -35,6 +35,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnph0"]
+atlas = ExtResource("3_2a6ve")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b3qj"]
+atlas = ExtResource("3_2a6ve")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2as5"]
+atlas = ExtResource("3_2a6ve")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh1s0"]
+atlas = ExtResource("3_2a6ve")
+region = Rect2(30, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7c8bv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnph0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2b3qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2as5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh1s0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="TreasureChest" type="StaticBody2D" unique_id=737068780 groups=["interactable"]]
 script = ExtResource("1_2tkyh")
 
@@ -47,10 +83,12 @@ sprite_frames = SubResource("SpriteFrames_vnph0")
 animation = &"closed"
 autoplay = "closed"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=478415117]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1872580981]
 visible = false
-position = Vector2(0, -13)
-texture = ExtResource("3_sdjdt")
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_7c8bv")
+autoplay = "default"
+frame_progress = 0.7904395
 
 [node name="Timer" type="Timer" parent="." unique_id=1030664774]
 
