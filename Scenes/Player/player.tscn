@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cfm84nsvii21j" path="res://Ninja Adventure - Asset Pack/Actor/Characters/Noble/SpriteSheet.png" id="2_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://dxowxke25wwsw" path="res://Ninja Adventure - Asset Pack/Actor/Characters/Noble/SeparateAnim/Attack.png" id="2_dd0ac"]
 [ext_resource type="Texture2D" uid="uid://ca74e3ua14kfw" path="res://Ninja Adventure - Asset Pack/Ui/LifeReceptacle/heart.png" id="3_mtuoh"]
+[ext_resource type="FontFile" uid="uid://8o1s6gxhc75i" path="res://Ninja Adventure - Asset Pack/Ui/Font/NormalFont.ttf" id="5_gk6dx"]
 [ext_resource type="Texture2D" uid="uid://ck8lnb7oa1b7m" path="res://Ninja Adventure - Asset Pack/Items/Weapons/BigSword/Sprite.png" id="5_htcer"]
 [ext_resource type="Texture2D" uid="uid://b71fd7ric3cmn" path="res://Ninja Adventure - Asset Pack/Items/Treasure/GoldCoin.png" id="5_jlvik"]
 [ext_resource type="AudioStream" uid="uid://cl7y4ett7sqw6" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Hit.wav" id="7_0u5uq"]
@@ -277,7 +278,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhyir"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [sub_resource type="LabelSettings" id="LabelSettings_mtuoh"]
+font = ExtResource("5_gk6dx")
 font_size = 48
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dd0ac"]
@@ -478,6 +492,7 @@ offset_left = 990.0
 offset_top = 12.0
 offset_right = 1143.0
 offset_bottom = 82.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhyir")
 
 [node name="TreasureLabel" type="Label" parent="CanvasLayer/Panel" unique_id=361170105]
 unique_name_in_owner = true

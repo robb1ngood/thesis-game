@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cetwpswo477kt"]
+
+[ext_resource type="Texture2D" uid="uid://ck8lnb7oa1b7m" path="res://Ninja Adventure - Asset Pack/Items/Weapons/BigSword/Sprite.png" id="1_cswss"]
+[ext_resource type="Script" uid="uid://dhack0ydnnnu1" path="res://Scenes/WeaponPickup/weaponpickup.gd" id="1_o5yc3"]
+[ext_resource type="Texture2D" uid="uid://cyyhdaobycqfo" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetReliefDetail.png" id="2_o5yc3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faa54"]
+atlas = ExtResource("2_o5yc3")
+region = Rect2(64.339264, 65.33185, 15.369743, 12.263092)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lueo"]
+size = Vector2(12, 9)
+
+[node name="WeaponPickup" type="StaticBody2D" unique_id=327541258 groups=["interactable"]]
+script = ExtResource("1_o5yc3")
+
+[node name="Sword" type="Sprite2D" parent="." unique_id=699771430]
+position = Vector2(0, -8)
+rotation = -3.1415925
+texture = ExtResource("1_cswss")
+
+[node name="Stone" type="Sprite2D" parent="." unique_id=65206088]
+texture = SubResource("AtlasTexture_faa54")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=266759574]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1lueo")

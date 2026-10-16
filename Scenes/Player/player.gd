@@ -5,6 +5,7 @@ class_name Player
 @export var push_strength: float = 10
 @export var acceleration: float = 10
 
+var has_weapon: bool = false
 var is_attacking: bool = false
 var can_interact: bool = false
 
@@ -25,7 +26,7 @@ func _physics_process(delta):
 	
 	update_treasure_label()
 	
-	if Input.is_action_just_pressed("interact") and not can_interact:
+	if Input.is_action_just_pressed("interact") and not can_interact and has_weapon:
 		attack()
 	
 	move_and_slide()
@@ -177,3 +178,6 @@ func _on_attack_duration_timer_timeout() -> void:
 		$AnimatedSprite2D.play("move_up")
 	if player_animation == "attack_down":
 		$AnimatedSprite2D.play("move_down")
+
+func _on_weapon_picked_up():
+	has_weapon = true
