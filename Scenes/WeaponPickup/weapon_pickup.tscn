@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cetwpswo477kt"]
 
 [ext_resource type="Texture2D" uid="uid://ck8lnb7oa1b7m" path="res://Ninja Adventure - Asset Pack/Items/Weapons/BigSword/Sprite.png" id="1_cswss"]
-[ext_resource type="Script" uid="uid://dhack0ydnnnu1" path="res://Scenes/WeaponPickup/weaponpickup.gd" id="1_o5yc3"]
+[ext_resource type="Script" uid="uid://dhack0ydnnnu1" path="res://Scenes/WeaponPickup/weapon_pickup.gd" id="1_o5yc3"]
 [ext_resource type="Texture2D" uid="uid://cyyhdaobycqfo" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetReliefDetail.png" id="2_o5yc3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_faa54"]

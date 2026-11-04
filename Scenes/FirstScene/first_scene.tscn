@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c5sw0pb7csit8" path="res://Scenes/LockedDoor/locked_door.tscn" id="14_8u4fi"]
 [ext_resource type="PackedScene" uid="uid://bhy2faqm2lfh6" path="res://Scenes/Switch/switch.tscn" id="16_0wpyg"]
 [ext_resource type="PackedScene" uid="uid://bfbt2uhb4modo" path="res://Scenes/Switch/switch_puzzle_manager.tscn" id="16_gat8p"]
-[ext_resource type="PackedScene" uid="uid://cetwpswo477kt" path="res://Scenes/WeaponPickup/weaponpickup.tscn" id="19_f381g"]
+[ext_resource type="PackedScene" uid="uid://cetwpswo477kt" path="res://Scenes/WeaponPickup/weapon_pickup.tscn" id="19_f381g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bfnu2"]
 texture = ExtResource("4_7xk3j")
@@ -1397,7 +1397,7 @@ text = "Hello"
 text = "The Lumberjack"
 
 [node name="Player" parent="ObstacleLayer" unique_id=1382311881 instance=ExtResource("5_htmef")]
-position = Vector2(-864, 419)
+position = Vector2(278, 646)
 
 [node name="Camera2D" type="Camera2D" parent="ObstacleLayer/Player" unique_id=1447214303]
 position = Vector2(3.3333435, 0)
