@@ -16,11 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://bf3c2ork7k8ik" path="res://Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/SpriteSheet.png" id="11_bi8m8"]
 [ext_resource type="PackedScene" uid="uid://cex2tbl7di5k1" path="res://Scenes/TreasureChest/treasure_chest.tscn" id="12_bfnu2"]
 [ext_resource type="Texture2D" uid="uid://bi522gf1gah3d" path="res://Ninja Adventure - Asset Pack/Actor/Characters/FighterRed/Faceset.png" id="13_f381g"]
+[ext_resource type="Texture2D" uid="uid://bothhnixpw65j" path="res://Ninja Adventure - Asset Pack/Actor/Characters/MaskFrog/Dead14.png" id="13_ieqjn"]
 [ext_resource type="PackedScene" uid="uid://c5sw0pb7csit8" path="res://Scenes/LockedDoor/locked_door.tscn" id="14_8u4fi"]
 [ext_resource type="PackedScene" uid="uid://bhy2faqm2lfh6" path="res://Scenes/Switch/switch.tscn" id="16_0wpyg"]
 [ext_resource type="PackedScene" uid="uid://bfbt2uhb4modo" path="res://Scenes/Switch/switch_puzzle_manager.tscn" id="16_gat8p"]
-[ext_resource type="Texture2D" uid="uid://g4qgea0tseev" path="res://Ninja Adventure - Asset Pack/Actor/Characters/Inspector/SpriteSheet.png" id="16_qs8rj"]
+[ext_resource type="Texture2D" uid="uid://g4qgea0tseev" path="res://Ninja Adventure - Asset Pack/Actor/Characters/Inspector/SpriteSheet.png" id="18_k1d52"]
 [ext_resource type="PackedScene" uid="uid://cetwpswo477kt" path="res://Scenes/WeaponPickup/weapon_pickup.tscn" id="19_f381g"]
+[ext_resource type="Texture2D" uid="uid://by8jpkxtc4h60" path="res://Ninja Adventure - Asset Pack/Actor/Characters/Inspector/Faceset.png" id="19_ppyd4"]
 [ext_resource type="PackedScene" uid="uid://b7nj8c86uqldf" path="res://Scenes/Boat/boat.tscn" id="22_qs8rj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bfnu2"]
@@ -1289,12 +1291,9 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_7xk3j")
 sources/0 = SubResource("TileSetAtlasSource_1drkt")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ihxbb"]
-atlas = ExtResource("16_qs8rj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oh02"]
+atlas = ExtResource("18_k1d52")
 region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k1d52"]
-load_path = "res://.godot/imported/Dead14.png-f0c2d22b79d72c274138c688f8c7daa0.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bfnu2"]
 atlas = ExtResource("11_bi8m8")
@@ -1312,6 +1311,7 @@ tile_set = SubResource("TileSet_gywge")
 
 [node name="TreasureChest" parent="." unique_id=737068780 instance=ExtResource("12_bfnu2")]
 position = Vector2(-896, 84)
+chest_name = "island_chest1"
 
 [node name="ShrubberyLayer" type="TileMapLayer" parent="." unique_id=482329453]
 y_sort_enabled = true
@@ -1335,6 +1335,7 @@ collision_mask = 12
 
 [node name="TreasureChest2" parent="HiddenTreePuzzle" unique_id=598799983 instance=ExtResource("12_bfnu2")]
 position = Vector2(312, 153)
+chest_name = "island_chest2"
 
 [node name="DungeonDoorPuzzle" type="Node" parent="." unique_id=1724322366]
 
@@ -1372,41 +1373,41 @@ position = Vector2(266, 680)
 [node name="SceneEntrance" parent="ObstacleLayer" unique_id=134215982 instance=ExtResource("8_8u4fi")]
 position = Vector2(-728, 24)
 
-[node name="BoatDealer" parent="ObstacleLayer" unique_id=347314837 instance=ExtResource("7_htmef")]
-position = Vector2(-73, 792)
-is_final_npc = true
-dialogue_lines = Array[String](["Sup.", "If you wanna get off this island for good", "I can sell you this boat for gold."])
-
-[node name="Sprite2D" parent="ObstacleLayer/BoatDealer" index="0" unique_id=1144072999]
-texture = SubResource("AtlasTexture_ihxbb")
-
-[node name="NPCIcon" parent="ObstacleLayer/BoatDealer/CanvasLayer/DialogueBoxTexture" parent_id_path=PackedInt32Array(347314837, 179547376) index="0" unique_id=1597987461]
-texture = ExtResource("13_f381g")
-
-[node name="DialogueLabel" parent="ObstacleLayer/BoatDealer/CanvasLayer" parent_id_path=PackedInt32Array(347314837, 1590946440) index="1" unique_id=81479563]
-text = "Hello"
-
-[node name="NameLabel" parent="ObstacleLayer/BoatDealer/CanvasLayer" parent_id_path=PackedInt32Array(347314837, 1590946440) index="2" unique_id=194340707]
-text = "The Lumberjack"
-
-[node name="FrogGuy" parent="ObstacleLayer" unique_id=314519209 instance=ExtResource("7_htmef")]
+[node name="FrogGuy" parent="ObstacleLayer" unique_id=347314837 instance=ExtResource("7_htmef")]
 position = Vector2(-138, 165)
 dialogue_lines = Array[String](["Hi! *ribbit*", "I wouldn't go to the left.", "Not without a weapon. *ribbit*", "It's infested with shellfish."])
 
 [node name="Sprite2D" parent="ObstacleLayer/FrogGuy" index="0" unique_id=1144072999]
-texture = SubResource("CompressedTexture2D_k1d52")
+texture = ExtResource("13_ieqjn")
 
-[node name="NPCIcon" parent="ObstacleLayer/FrogGuy/CanvasLayer/DialogueBoxTexture" parent_id_path=PackedInt32Array(314519209, 179547376) index="0" unique_id=1597987461]
+[node name="NPCIcon" parent="ObstacleLayer/FrogGuy/CanvasLayer/DialogueBoxTexture" parent_id_path=PackedInt32Array(347314837, 179547376) index="0" unique_id=1597987461]
 texture = ExtResource("9_urtgt")
 
-[node name="DialogueLabel" parent="ObstacleLayer/FrogGuy/CanvasLayer" parent_id_path=PackedInt32Array(314519209, 1590946440) index="1" unique_id=81479563]
+[node name="DialogueLabel" parent="ObstacleLayer/FrogGuy/CanvasLayer" parent_id_path=PackedInt32Array(347314837, 1590946440) index="1" unique_id=81479563]
 text = "Hello"
 
-[node name="NameLabel" parent="ObstacleLayer/FrogGuy/CanvasLayer" parent_id_path=PackedInt32Array(314519209, 1590946440) index="2" unique_id=194340707]
+[node name="NameLabel" parent="ObstacleLayer/FrogGuy/CanvasLayer" parent_id_path=PackedInt32Array(347314837, 1590946440) index="2" unique_id=194340707]
 text = "Frog Guy"
 
+[node name="BoatDealer" parent="ObstacleLayer" unique_id=129858725 instance=ExtResource("7_htmef")]
+position = Vector2(-72, 790)
+dialogue_lines = Array[String](["Hello there!", "I am the lumberjack on this island.", "I lost my axe in the nearby abandoned village to the east.", "If you bring me my axe, I can chop down the trees in the north."])
+is_endgame_npc = true
+
+[node name="Sprite2D" parent="ObstacleLayer/BoatDealer" index="0" unique_id=1144072999]
+texture = SubResource("AtlasTexture_7oh02")
+
+[node name="NPCIcon" parent="ObstacleLayer/BoatDealer/CanvasLayer/DialogueBoxTexture" parent_id_path=PackedInt32Array(129858725, 179547376) index="0" unique_id=1597987461]
+texture = ExtResource("19_ppyd4")
+
+[node name="DialogueLabel" parent="ObstacleLayer/BoatDealer/CanvasLayer" parent_id_path=PackedInt32Array(129858725, 1590946440) index="1" unique_id=81479563]
+text = "Hello"
+
+[node name="NameLabel" parent="ObstacleLayer/BoatDealer/CanvasLayer" parent_id_path=PackedInt32Array(129858725, 1590946440) index="2" unique_id=194340707]
+text = "The Lumberjack"
+
 [node name="Lumberjack" parent="ObstacleLayer" unique_id=133207882 instance=ExtResource("7_htmef")]
-position = Vector2(-873, 520)
+position = Vector2(-874, 512)
 dialogue_lines = Array[String](["Hello there!", "I am the lumberjack on this island.", "I lost my axe in the nearby abandoned village to the east.", "If you bring me my axe, I can chop down the trees in the north."])
 
 [node name="Sprite2D" parent="ObstacleLayer/Lumberjack" index="0" unique_id=1144072999]
@@ -1422,7 +1423,7 @@ text = "Hello"
 text = "The Lumberjack"
 
 [node name="Player" parent="ObstacleLayer" unique_id=1382311881 instance=ExtResource("5_htmef")]
-position = Vector2(-41, 767)
+position = Vector2(-31, 787)
 
 [node name="Camera2D" type="Camera2D" parent="ObstacleLayer/Player" unique_id=1447214303]
 position = Vector2(3.3333435, 0)
@@ -1433,6 +1434,10 @@ limit_left = -300
 limit_top = -350
 limit_right = 380
 limit_bottom = 280
+
+[node name="Boat" parent="ObstacleLayer" unique_id=1121069981 instance=ExtResource("22_qs8rj")]
+y_sort_enabled = true
+position = Vector2(-53, 830)
 
 [node name="Enemies" type="Node" parent="ObstacleLayer" unique_id=817827058]
 
@@ -1457,47 +1462,13 @@ position = Vector2(-243, 246)
 [node name="ShellfishEnemy3" parent="ObstacleLayer/Enemies" unique_id=301794397 instance=ExtResource("7_40820")]
 position = Vector2(-316, 272)
 
-[node name="TreasureChest2" parent="ObstacleLayer" unique_id=864251286 instance=ExtResource("12_bfnu2")]
-position = Vector2(-1, 764)
-
-[node name="TreasureChest4" parent="ObstacleLayer" unique_id=208623344 instance=ExtResource("12_bfnu2")]
-position = Vector2(25, 768)
-
-[node name="TreasureChest3" parent="ObstacleLayer" unique_id=174896338 instance=ExtResource("12_bfnu2")]
-position = Vector2(14, 746)
-
-[node name="TreasureChest2" parent="ObstacleLayer/TreasureChest3" unique_id=613479679 instance=ExtResource("12_bfnu2")]
-position = Vector2(59, -18)
-
-[node name="TreasureChest4" parent="ObstacleLayer/TreasureChest3" unique_id=818696952 instance=ExtResource("12_bfnu2")]
-position = Vector2(85, -14)
-
-[node name="TreasureChest3" parent="ObstacleLayer/TreasureChest3" unique_id=2051062175 instance=ExtResource("12_bfnu2")]
-position = Vector2(74, -36)
-
-[node name="TreasureChest2" parent="ObstacleLayer/TreasureChest3/TreasureChest3" unique_id=1641152748 instance=ExtResource("12_bfnu2")]
-position = Vector2(-62, -33)
-
-[node name="TreasureChest4" parent="ObstacleLayer/TreasureChest3/TreasureChest3" unique_id=1972585012 instance=ExtResource("12_bfnu2")]
-position = Vector2(-36, -29)
-
-[node name="TreasureChest3" parent="ObstacleLayer/TreasureChest3/TreasureChest3" unique_id=84680746 instance=ExtResource("12_bfnu2")]
-position = Vector2(-47, -51)
-
-[node name="TreasureChest2" parent="ObstacleLayer/TreasureChest3/TreasureChest3/TreasureChest3" unique_id=678472163 instance=ExtResource("12_bfnu2")]
-position = Vector2(-91, 19)
-
-[node name="TreasureChest4" parent="ObstacleLayer/TreasureChest3/TreasureChest3/TreasureChest3" unique_id=1437388990 instance=ExtResource("12_bfnu2")]
-position = Vector2(-65, 23)
-
-[node name="TreasureChest3" parent="ObstacleLayer/TreasureChest3/TreasureChest3/TreasureChest3" unique_id=1473588804 instance=ExtResource("12_bfnu2")]
-position = Vector2(-76, 1)
+[node name="TreasureChest2" parent="ObstacleLayer" unique_id=1144330766 instance=ExtResource("12_bfnu2")]
+position = Vector2(-2, 787)
+chest_name = "island_chestx"
 
 [node name="TreasureChest" parent="ObstacleLayer" unique_id=1596513919 instance=ExtResource("12_bfnu2")]
 position = Vector2(-824, 359)
-
-[node name="Boat" parent="." unique_id=1121069981 instance=ExtResource("22_qs8rj")]
-position = Vector2(-53, 830)
+chest_name = "island_chest3"
 
 [connection signal="puzzle_failed" from="DungeonDoorPuzzle/SwitchPuzzleManager" to="DungeonDoorPuzzle/LockedDoor" method="_on_puzzle_button_unpressed"]
 [connection signal="puzzle_solved" from="DungeonDoorPuzzle/SwitchPuzzleManager" to="DungeonDoorPuzzle/LockedDoor" method="_on_puzzle_button_pressed"]
@@ -1513,6 +1484,6 @@ position = Vector2(-53, 830)
 [connection signal="switch_deactivated" from="DungeonDoorPuzzle/Switch5" to="DungeonDoorPuzzle/SwitchPuzzleManager" method="increase_score"]
 [connection signal="weapon_picked_up" from="ObstacleLayer/WeaponPickup" to="ObstacleLayer/Player" method="_on_weapon_picked_up"]
 
-[editable path="ObstacleLayer/BoatDealer"]
 [editable path="ObstacleLayer/FrogGuy"]
+[editable path="ObstacleLayer/BoatDealer"]
 [editable path="ObstacleLayer/Lumberjack"]

@@ -6,7 +6,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyuc"]
 height = 74.0
 
-[node name="Boat" type="StaticBody2D" unique_id=1121069981]
+[node name="Boat" type="StaticBody2D" unique_id=1121069981 groups=["boat"]]
 
 [node name="Hull" type="Sprite2D" parent="." unique_id=861468417]
 texture = ExtResource("1_1lq8i")

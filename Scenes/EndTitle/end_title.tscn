@@ -1,3 +1,89 @@
 [gd_scene format=3 uid="uid://b6sasitopg3a5"]
 
-[node name="EndTitle" type="Node2D" unique_id=1204066582]
+[ext_resource type="Script" uid="uid://ok02vj1mcck8" path="res://Scenes/EndTitle/end_title.gd" id="1_endttl"]
+[ext_resource type="FontFile" uid="uid://8o1s6gxhc75i" path="res://Ninja Adventure - Asset Pack/Ui/Font/NormalFont.ttf" id="2_eipms"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font = ExtResource("2_eipms")
+font_size = 96
+font_color = Color(1, 0.84, 0.3, 1)
+outline_size = 8
+outline_color = Color(0.25, 0.12, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sub"]
+font = ExtResource("2_eipms")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_treasure"]
+font = ExtResource("2_eipms")
+font_size = 28
+font_color = Color(0.9, 0.8, 0.5, 1)
+
+[node name="Control" type="Control" unique_id=508909452]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_endttl")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1991928271]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1752176199]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=163037618]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1958570128]
+unique_name_in_owner = true
+layout_mode = 2
+text = "The End"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1774735718]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Thanks for playing!"
+label_settings = SubResource("LabelSettings_sub")
+horizontal_alignment = 1
+
+[node name="TreasureLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=724218582]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Treasure collected: 10"
+label_settings = SubResource("LabelSettings_treasure")
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1801413692]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="PlayAgainButton" type="Button" parent="CenterContainer/VBoxContainer/Buttons" unique_id=1189118178]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 2
+text = "Play Again"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/Buttons" unique_id=1487466609]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 2
+text = "Quit"

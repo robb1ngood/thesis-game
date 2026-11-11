@@ -445,7 +445,7 @@ _data = {
 &"attack_up": SubResource("Animation_jlvik")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=1382311881]
+[node name="Player" type="CharacterBody2D" unique_id=1382311881 groups=["player"]]
 collision_layer = 2
 collision_mask = 7
 motion_mode = 1
