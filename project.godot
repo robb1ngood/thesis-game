@@ -23,11 +23,16 @@ SceneManager="*uid://crt15nnxnvfr2"
 
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
-"res://Ninja Adventure - Asset Pack/": "green",
-"res://Scenes/": "blue"
+"res://Ninja Adventure - Asset Pack/": "pink",
+"res://Scenes/": "orange",
+"res://test/": "green"
 }
 
 [global_group]
