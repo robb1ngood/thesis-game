@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b7nj8c86uqldf"]
+
+[ext_resource type="Texture2D" uid="uid://dyokysrnsafy2" path="res://Ninja Adventure - Asset Pack/Backgrounds/Vehicles/Boat.png" id="1_1lq8i"]
+[ext_resource type="Texture2D" uid="uid://dha44v3gphcq8" path="res://Ninja Adventure - Asset Pack/Backgrounds/Vehicles/Sail.png" id="2_0bf03"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vyuc"]
+height = 74.0
+
+[node name="Boat" type="StaticBody2D" unique_id=1121069981]
+
+[node name="Hull" type="Sprite2D" parent="." unique_id=861468417]
+texture = ExtResource("1_1lq8i")
+
+[node name="Sail" type="Sprite2D" parent="." unique_id=1830972441]
+position = Vector2(12, -19)
+texture = ExtResource("2_0bf03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1226528348]
+position = Vector2(0, 4.7683716e-07)
+rotation = 1.5707964
+scale = Vector2(1.4349015, -0.9951686)
+shape = SubResource("CapsuleShape2D_3vyuc")
