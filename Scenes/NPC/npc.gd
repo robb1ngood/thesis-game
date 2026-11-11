@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+@export var is_final_npc: bool = false
 var can_interact: bool = false
 
 @export var dialogue_lines: Array[String] = ["Hi!", "How are you?", "Bye!"]
