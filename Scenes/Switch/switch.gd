@@ -15,11 +15,11 @@ func _process(delta):
 			deactivate_switch()
 			
 func activate_switch():
-	$AnimatedSprite2D.play("deactivated")
-	switch_deactivated.emit()
+	$AnimatedSprite2D.play("acitvated")
+	switch_activated.emit()
 	is_activated = false
 
 func deactivate_switch():
-	$AnimatedSprite2D.play("activated")
-	switch_activated.emit()
+	$AnimatedSprite2D.play("deactivated")
+	switch_deactivated.emit()
 	is_activated = true

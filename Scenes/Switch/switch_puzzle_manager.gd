@@ -15,7 +15,6 @@ func increase_score():
 	
 func decrease_score():
 	score -= 1
-	print(score)
 	
 	if score < target_score:
 		puzzle_failed.emit()
