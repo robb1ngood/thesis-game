@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c3qtaqosoivsk"]
+
+[ext_resource type="Script" uid="uid://hcw5pohrjxb1" path="res://Scenes/Logger/logger.gd" id="1_i5fvy"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1733069429]
+script = ExtResource("1_i5fvy")
+
+[node name="Label" type="Label" parent="." unique_id=864009096]
+offset_right = 40.0
+offset_bottom = 23.0
