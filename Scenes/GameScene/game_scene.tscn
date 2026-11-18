@@ -854,9 +854,6 @@ position = Vector2(274, 165)
 [node name="SceneEntrance" parent="." unique_id=134215982 instance=ExtResource("5_oi8ly")]
 position = Vector2(264, -205)
 
-[node name="LockedDoor" parent="." unique_id=619921547 instance=ExtResource("8_elpgg")]
-position = Vector2(264, -204)
-
 [node name="PuzzleWalls" type="StaticBody2D" parent="." unique_id=751049761]
 visible = false
 position = Vector2(298, 166)
@@ -949,6 +946,9 @@ position = Vector2(306, -44)
 
 [node name="TreasureChest" parent="." unique_id=737068780 instance=ExtResource("16_6dkqd")]
 position = Vector2(303, -85)
+
+[node name="LockedDoor" parent="." unique_id=619921547 instance=ExtResource("8_elpgg")]
+position = Vector2(264, -204)
 
 [connection signal="pressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_pressed"]
 [connection signal="unpressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_unpressed"]

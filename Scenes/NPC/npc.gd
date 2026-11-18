@@ -4,18 +4,18 @@ var can_interact: bool = false
 
 @export var dialogue_lines: Array[String] = ["Hi!", "How are you?", "Bye!"]
 
-@export_group("Ending")
 @export var is_endgame_npc: bool = false
-@export var required_treasure: int = 1
-@export var not_enough_treasure_lines: Array[String] = [
+
+# Ending values
+var required_treasure: int = 1
+var not_enough_treasure_lines: Array[String] = [
 	"Bring me 10 treasures and I'll sell you this boat to go home.",
 	"Keep looking!",
 ]
-@export var enough_treasure_lines: Array[String] = [
+var enough_treasure_lines: Array[String] = [
 	"You found them all!",
 	"The boat is all yours!",
 ]
-@export_file("*.tscn") var end_title_scene_path: String = "res://Scenes/EndTitle/end_title.tscn"
 
 var dialogue_index: int = 0
 var _active_lines: Array[String] = []
@@ -91,4 +91,4 @@ func trigger_ending() -> void:
 		tween.tween_property(fade_rect, "color:a", 1.0, 2.0)
 
 	tween.tween_interval(0.5)
-	tween.tween_callback(func(): get_tree().change_scene_to_file(end_title_scene_path))
+	tween.tween_callback(func(): get_tree().change_scene_to_file("res://Scenes/EndTitle/end_title.tscn"))

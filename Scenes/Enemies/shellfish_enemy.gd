@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var lose_interest_distance: float = 120
 
 var target: Node2D
+var is_dead: bool = false
 
 func _physics_process(delta):
 	if HP <= 0:
@@ -49,6 +50,8 @@ func _on_player_detect_area_2d_body_entered(body: Node2D) -> void:
 		target = body
 
 func take_damage():
+	if is_dead:
+		return
 	HP -= 1
 	if HP <= 0:
 		die()
@@ -68,6 +71,8 @@ func play_damage_sfx():
 	$DamageSFX.play()
 	
 func die():
+	is_dead = true
+	SceneManager.register_kill()
 	$GPUParticles2D.emitting = true
 	$AnimatedSprite2D.visible = false
 	$CollisionShape2D.set_deferred("disabled", true)
