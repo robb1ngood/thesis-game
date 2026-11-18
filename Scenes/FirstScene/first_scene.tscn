@@ -1324,19 +1324,6 @@ tile_map_data = PackedByteArray("AAATAAkAAQAAAAYAAAALAAsAAQAAAAYAAAAMAAoAAQAAAAY
 tile_set = SubResource("TileSet_8u4fi")
 script = ExtResource("9_gat8p")
 
-[node name="Block" parent="." unique_id=1812137363 instance=ExtResource("11_bfnu2")]
-position = Vector2(309, 121)
-
-[node name="HiddenTreePuzzle" type="Node" parent="." unique_id=1062552189]
-
-[node name="PuzzleButton" parent="HiddenTreePuzzle" unique_id=1797121851 instance=ExtResource("10_urtgt")]
-position = Vector2(266, 202)
-collision_mask = 12
-
-[node name="TreasureChestBlockPuzzle" parent="HiddenTreePuzzle" unique_id=598799983 instance=ExtResource("12_bfnu2")]
-position = Vector2(312, 153)
-chest_name = "block_puzzle_chest"
-
 [node name="DungeonDoorPuzzle" type="Node" parent="." unique_id=1724322366]
 
 [node name="SwitchPuzzleManager" parent="DungeonDoorPuzzle" unique_id=1990423614 instance=ExtResource("16_gat8p")]
@@ -1362,70 +1349,104 @@ position = Vector2(-418, 563)
 [node name="Switch5" parent="DungeonDoorPuzzle" unique_id=358681818 instance=ExtResource("16_0wpyg")]
 position = Vector2(-454, 544)
 
-[node name="ObstacleLayer" type="TileMapLayer" parent="." unique_id=1222407506]
+[node name="HiddenTreeBlockPuzzle" type="Node" parent="." unique_id=934068634]
+
+[node name="Block" parent="HiddenTreeBlockPuzzle" unique_id=1812137363 instance=ExtResource("11_bfnu2")]
+position = Vector2(309, 121)
+
+[node name="PuzzleButton" parent="HiddenTreeBlockPuzzle" unique_id=1797121851 instance=ExtResource("10_urtgt")]
+position = Vector2(266, 202)
+collision_mask = 12
+
+[node name="Enemies" type="Node" parent="." unique_id=817827058]
+
+[node name="ShellfishEnemy4" parent="Enemies" unique_id=222290903 instance=ExtResource("7_40820")]
+position = Vector2(488, 520)
+
+[node name="ShellfishEnemy5" parent="Enemies" unique_id=1298548209 instance=ExtResource("7_40820")]
+position = Vector2(654, 511)
+
+[node name="ShellfishEnemy6" parent="Enemies" unique_id=349202271 instance=ExtResource("7_40820")]
+position = Vector2(550, 455)
+
+[node name="ShellfishEnemy7" parent="Enemies" unique_id=494637893 instance=ExtResource("7_40820")]
+position = Vector2(545, 591)
+
+[node name="ShellfishEnemy" parent="Enemies" unique_id=2026617267 instance=ExtResource("7_40820")]
+position = Vector2(-258, 179)
+
+[node name="ShellfishEnemy2" parent="Enemies" unique_id=104931423 instance=ExtResource("7_40820")]
+position = Vector2(-243, 246)
+
+[node name="ShellfishEnemy3" parent="Enemies" unique_id=301794397 instance=ExtResource("7_40820")]
+position = Vector2(-316, 272)
+
+[node name="ObstacleLayer" type="Node" parent="." unique_id=1399439196]
+
+[node name="ObstacleLayer" type="TileMapLayer" parent="ObstacleLayer" unique_id=1222407506]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_8u4fi")
 
-[node name="WeaponPickup" parent="ObstacleLayer" unique_id=327541258 instance=ExtResource("19_f381g")]
+[node name="WeaponPickup" parent="ObstacleLayer/ObstacleLayer" unique_id=327541258 instance=ExtResource("19_f381g")]
 position = Vector2(266, 680)
 
-[node name="SceneEntrance" parent="ObstacleLayer" unique_id=134215982 instance=ExtResource("8_8u4fi")]
+[node name="SceneEntrance" parent="ObstacleLayer/ObstacleLayer" unique_id=134215982 instance=ExtResource("8_8u4fi")]
 position = Vector2(-728, 24)
 
-[node name="FrogGuy" parent="ObstacleLayer" unique_id=347314837 instance=ExtResource("7_htmef")]
+[node name="FrogGuy" parent="ObstacleLayer/ObstacleLayer" unique_id=347314837 instance=ExtResource("7_htmef")]
 position = Vector2(-138, 165)
 dialogue_lines = Array[String](["Hi! *ribbit*", "I wouldn't go to the left.", "Not without a weapon. *ribbit*", "It's infested with shellfish."])
 
-[node name="Sprite2D" parent="ObstacleLayer/FrogGuy" index="0" unique_id=1144072999]
+[node name="Sprite2D" parent="ObstacleLayer/ObstacleLayer/FrogGuy" index="0" unique_id=1144072999]
 texture = ExtResource("13_ieqjn")
 
-[node name="NPCIcon" parent="ObstacleLayer/FrogGuy/CanvasLayer/DialogueBoxTexture" parent_id_path=PackedInt32Array(347314837, 179547376) index="0" unique_id=1597987461]
+[node name="NPCIcon" parent="ObstacleLayer/ObstacleLayer/FrogGuy/CanvasLayer/DialogueBoxTexture" parent_id_path=PackedInt32Array(347314837, 179547376) index="0" unique_id=1597987461]
 texture = ExtResource("9_urtgt")
 
-[node name="DialogueLabel" parent="ObstacleLayer/FrogGuy/CanvasLayer" parent_id_path=PackedInt32Array(347314837, 1590946440) index="1" unique_id=81479563]
+[node name="DialogueLabel" parent="ObstacleLayer/ObstacleLayer/FrogGuy/CanvasLayer" parent_id_path=PackedInt32Array(347314837, 1590946440) index="1" unique_id=81479563]
 text = "Hello"
 
-[node name="NameLabel" parent="ObstacleLayer/FrogGuy/CanvasLayer" parent_id_path=PackedInt32Array(347314837, 1590946440) index="2" unique_id=194340707]
+[node name="NameLabel" parent="ObstacleLayer/ObstacleLayer/FrogGuy/CanvasLayer" parent_id_path=PackedInt32Array(347314837, 1590946440) index="2" unique_id=194340707]
 text = "Frog Guy"
 
-[node name="BoatDealer" parent="ObstacleLayer" unique_id=129858725 instance=ExtResource("7_htmef")]
+[node name="BoatDealer" parent="ObstacleLayer/ObstacleLayer" unique_id=129858725 instance=ExtResource("7_htmef")]
 position = Vector2(-72, 790)
 dialogue_lines = Array[String](["Hello there!", "I am the lumberjack on this island.", "I lost my axe in the nearby abandoned village to the east.", "If you bring me my axe, I can chop down the trees in the north."])
 is_endgame_npc = true
 
-[node name="Sprite2D" parent="ObstacleLayer/BoatDealer" index="0" unique_id=1144072999]
+[node name="Sprite2D" parent="ObstacleLayer/ObstacleLayer/BoatDealer" index="0" unique_id=1144072999]
 texture = SubResource("AtlasTexture_7oh02")
 
-[node name="NPCIcon" parent="ObstacleLayer/BoatDealer/CanvasLayer/DialogueBoxTexture" parent_id_path=PackedInt32Array(129858725, 179547376) index="0" unique_id=1597987461]
+[node name="NPCIcon" parent="ObstacleLayer/ObstacleLayer/BoatDealer/CanvasLayer/DialogueBoxTexture" parent_id_path=PackedInt32Array(129858725, 179547376) index="0" unique_id=1597987461]
 texture = ExtResource("19_ppyd4")
 
-[node name="DialogueLabel" parent="ObstacleLayer/BoatDealer/CanvasLayer" parent_id_path=PackedInt32Array(129858725, 1590946440) index="1" unique_id=81479563]
+[node name="DialogueLabel" parent="ObstacleLayer/ObstacleLayer/BoatDealer/CanvasLayer" parent_id_path=PackedInt32Array(129858725, 1590946440) index="1" unique_id=81479563]
 text = "Hello"
 
-[node name="NameLabel" parent="ObstacleLayer/BoatDealer/CanvasLayer" parent_id_path=PackedInt32Array(129858725, 1590946440) index="2" unique_id=194340707]
+[node name="NameLabel" parent="ObstacleLayer/ObstacleLayer/BoatDealer/CanvasLayer" parent_id_path=PackedInt32Array(129858725, 1590946440) index="2" unique_id=194340707]
 text = "The Lumberjack"
 
-[node name="Lumberjack" parent="ObstacleLayer" unique_id=133207882 instance=ExtResource("7_htmef")]
+[node name="Lumberjack" parent="ObstacleLayer/ObstacleLayer" unique_id=133207882 instance=ExtResource("7_htmef")]
 position = Vector2(-874, 512)
 dialogue_lines = Array[String](["Hello there!", "I am the lumberjack on this island.", "I lost my axe in the nearby abandoned village to the east.", "If you bring me my axe, I can chop down the trees in the north."])
 
-[node name="Sprite2D" parent="ObstacleLayer/Lumberjack" index="0" unique_id=1144072999]
+[node name="Sprite2D" parent="ObstacleLayer/ObstacleLayer/Lumberjack" index="0" unique_id=1144072999]
 texture = SubResource("AtlasTexture_bfnu2")
 
-[node name="NPCIcon" parent="ObstacleLayer/Lumberjack/CanvasLayer/DialogueBoxTexture" parent_id_path=PackedInt32Array(133207882, 179547376) index="0" unique_id=1597987461]
+[node name="NPCIcon" parent="ObstacleLayer/ObstacleLayer/Lumberjack/CanvasLayer/DialogueBoxTexture" parent_id_path=PackedInt32Array(133207882, 179547376) index="0" unique_id=1597987461]
 texture = ExtResource("13_f381g")
 
-[node name="DialogueLabel" parent="ObstacleLayer/Lumberjack/CanvasLayer" parent_id_path=PackedInt32Array(133207882, 1590946440) index="1" unique_id=81479563]
+[node name="DialogueLabel" parent="ObstacleLayer/ObstacleLayer/Lumberjack/CanvasLayer" parent_id_path=PackedInt32Array(133207882, 1590946440) index="1" unique_id=81479563]
 text = "Hello"
 
-[node name="NameLabel" parent="ObstacleLayer/Lumberjack/CanvasLayer" parent_id_path=PackedInt32Array(133207882, 1590946440) index="2" unique_id=194340707]
+[node name="NameLabel" parent="ObstacleLayer/ObstacleLayer/Lumberjack/CanvasLayer" parent_id_path=PackedInt32Array(133207882, 1590946440) index="2" unique_id=194340707]
 text = "The Lumberjack"
 
-[node name="Player" parent="ObstacleLayer" unique_id=1382311881 instance=ExtResource("5_htmef")]
-position = Vector2(-63, 197)
+[node name="Player" parent="ObstacleLayer/ObstacleLayer" unique_id=1382311881 instance=ExtResource("5_htmef")]
+position = Vector2(229, 208)
 
-[node name="Camera2D" type="Camera2D" parent="ObstacleLayer/Player" unique_id=1447214303]
+[node name="Camera2D" type="Camera2D" parent="ObstacleLayer/ObstacleLayer/Player" unique_id=1447214303]
 position = Vector2(3.3333435, 0)
 scale = Vector2(3.3333333, 3.3333333)
 zoom = Vector2(4, 4)
@@ -1435,40 +1456,21 @@ limit_top = -350
 limit_right = 380
 limit_bottom = 280
 
-[node name="Boat" parent="ObstacleLayer" unique_id=1121069981 instance=ExtResource("22_qs8rj")]
+[node name="Boat" parent="ObstacleLayer/ObstacleLayer" unique_id=1121069981 instance=ExtResource("22_qs8rj")]
 y_sort_enabled = true
 position = Vector2(-53, 830)
 
-[node name="Enemies" type="Node" parent="ObstacleLayer" unique_id=817827058]
-
-[node name="ShellfishEnemy4" parent="ObstacleLayer/Enemies" unique_id=222290903 instance=ExtResource("7_40820")]
-position = Vector2(488, 520)
-
-[node name="ShellfishEnemy5" parent="ObstacleLayer/Enemies" unique_id=1298548209 instance=ExtResource("7_40820")]
-position = Vector2(654, 511)
-
-[node name="ShellfishEnemy6" parent="ObstacleLayer/Enemies" unique_id=349202271 instance=ExtResource("7_40820")]
-position = Vector2(550, 455)
-
-[node name="ShellfishEnemy7" parent="ObstacleLayer/Enemies" unique_id=494637893 instance=ExtResource("7_40820")]
-position = Vector2(545, 591)
-
-[node name="ShellfishEnemy" parent="ObstacleLayer/Enemies" unique_id=2026617267 instance=ExtResource("7_40820")]
-position = Vector2(-258, 179)
-
-[node name="ShellfishEnemy2" parent="ObstacleLayer/Enemies" unique_id=104931423 instance=ExtResource("7_40820")]
-position = Vector2(-243, 246)
-
-[node name="ShellfishEnemy3" parent="ObstacleLayer/Enemies" unique_id=301794397 instance=ExtResource("7_40820")]
-position = Vector2(-316, 272)
-
-[node name="TreasureChestMaze" parent="ObstacleLayer" unique_id=1144330766 instance=ExtResource("12_bfnu2")]
+[node name="TreasureChestMaze" parent="ObstacleLayer/ObstacleLayer" unique_id=1144330766 instance=ExtResource("12_bfnu2")]
 position = Vector2(152, 568)
 chest_name = "maze_chest"
 
-[node name="TreasureChestLog" parent="ObstacleLayer" unique_id=1596513919 instance=ExtResource("12_bfnu2")]
+[node name="TreasureChestLog" parent="ObstacleLayer/ObstacleLayer" unique_id=1596513919 instance=ExtResource("12_bfnu2")]
 position = Vector2(-824, 359)
 chest_name = "log_chest"
+
+[node name="TreasureChestBlockPuzzle" parent="ObstacleLayer/ObstacleLayer" unique_id=598799983 instance=ExtResource("12_bfnu2")]
+position = Vector2(312, 153)
+chest_name = "block_puzzle_chest"
 
 [connection signal="puzzle_failed" from="DungeonDoorPuzzle/SwitchPuzzleManager" to="DungeonDoorPuzzle/LockedDoor" method="_on_puzzle_button_unpressed"]
 [connection signal="puzzle_solved" from="DungeonDoorPuzzle/SwitchPuzzleManager" to="DungeonDoorPuzzle/LockedDoor" method="_on_puzzle_button_pressed"]
@@ -1482,8 +1484,8 @@ chest_name = "log_chest"
 [connection signal="switch_deactivated" from="DungeonDoorPuzzle/Switch4" to="DungeonDoorPuzzle/SwitchPuzzleManager" method="decrease_score"]
 [connection signal="switch_activated" from="DungeonDoorPuzzle/Switch5" to="DungeonDoorPuzzle/SwitchPuzzleManager" method="decrease_score"]
 [connection signal="switch_deactivated" from="DungeonDoorPuzzle/Switch5" to="DungeonDoorPuzzle/SwitchPuzzleManager" method="increase_score"]
-[connection signal="weapon_picked_up" from="ObstacleLayer/WeaponPickup" to="ObstacleLayer/Player" method="_on_weapon_picked_up"]
+[connection signal="weapon_picked_up" from="ObstacleLayer/ObstacleLayer/WeaponPickup" to="ObstacleLayer/ObstacleLayer/Player" method="_on_weapon_picked_up"]
 
-[editable path="ObstacleLayer/FrogGuy"]
-[editable path="ObstacleLayer/BoatDealer"]
-[editable path="ObstacleLayer/Lumberjack"]
+[editable path="ObstacleLayer/ObstacleLayer/FrogGuy"]
+[editable path="ObstacleLayer/ObstacleLayer/BoatDealer"]
+[editable path="ObstacleLayer/ObstacleLayer/Lumberjack"]
