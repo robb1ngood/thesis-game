@@ -1423,7 +1423,7 @@ text = "Hello"
 text = "The Lumberjack"
 
 [node name="Player" parent="ObstacleLayer" unique_id=1382311881 instance=ExtResource("5_htmef")]
-position = Vector2(-31, 787)
+position = Vector2(-63, 197)
 
 [node name="Camera2D" type="Camera2D" parent="ObstacleLayer/Player" unique_id=1447214303]
 position = Vector2(3.3333435, 0)

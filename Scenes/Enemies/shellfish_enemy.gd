@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed: float = 30
 @export var acceleration: float = 5
 @export var HP: int = 2
+@export var lose_interest_distance: float = 120
 
 var target: Node2D
 
@@ -14,16 +15,24 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func chase_target():
-	if target:
-		var distance_to_player: Vector2
-		distance_to_player = target.global_position - global_position
+	if is_instance_valid(target):
+		var distance_to_player: Vector2 = target.global_position - global_position
 		
-		var direction_normal: Vector2 = distance_to_player.normalized()
-		
-		#velocity = direction_normal * speed
-		velocity = velocity.move_toward(direction_normal * speed, acceleration)
+		if distance_to_player.length() > lose_interest_distance:
+			target = null
+			
+		else:
+			var direction_normal: Vector2 = distance_to_player.normalized()
+			velocity = velocity.move_toward(direction_normal * speed, acceleration)
+			return
+	
+	velocity = velocity.move_toward(Vector2.ZERO, acceleration)
 
 func animate_enemy():
+	if velocity.length() < 0.1:
+		$AnimatedSprite2D.play("default")
+		return
+		
 	var normal_velocity: Vector2 = velocity.normalized()
 	
 	if normal_velocity.x > 0.707:
