@@ -1,9 +1,5 @@
 extends TileMapLayer
-
-func enable_tree():
-	visible = true
-	collision_enabled = true
 	
-func disable_tree():
+func disable_mossy_log():
 	visible = false
 	collision_enabled = false
