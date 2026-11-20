@@ -1402,7 +1402,7 @@ tile_map_data = PackedByteArray("AAATAAkAAQAAAAYAAAALAAsAAQAAAAYAAAAMAAoAAQAAAAY
 tile_set = SubResource("TileSet_8u4fi")
 
 [node name="WeaponPickup" parent="ObstacleLayer" unique_id=327541258 instance=ExtResource("19_f381g")]
-position = Vector2(266, 681)
+position = Vector2(265, 683)
 
 [node name="SceneEntrance" parent="ObstacleLayer" unique_id=134215982 instance=ExtResource("8_8u4fi")]
 position = Vector2(-728, 24)
@@ -1457,7 +1457,7 @@ text = "Hello"
 text = "The Lumberjack"
 
 [node name="Player" parent="ObstacleLayer" unique_id=1382311881 instance=ExtResource("5_htmef")]
-position = Vector2(-534, 549)
+position = Vector2(-736, 96)
 
 [node name="Camera2D" type="Camera2D" parent="ObstacleLayer/Player" unique_id=1447214303]
 position = Vector2(3.3333435, 0)
@@ -1484,6 +1484,7 @@ chest_name = "log_chest"
 [node name="DungeonLockedDoor" parent="." unique_id=619921547 instance=ExtResource("14_8u4fi")]
 position = Vector2(-727, 25)
 scale = Vector2(1.3600781, 0.88000244)
+stays_open = true
 
 [node name="Enemies" type="Node2D" parent="." unique_id=940744372]
 
@@ -1506,7 +1507,7 @@ position = Vector2(-258, 179)
 position = Vector2(-243, 246)
 
 [node name="ShellfishEnemy3" parent="Enemies" unique_id=301794397 instance=ExtResource("7_40820")]
-position = Vector2(-313, 263)
+position = Vector2(-320, 268)
 
 [connection signal="pressed" from="IceBlockPuzzle/SingleUsePuzzleButton" to="IceBlockPuzzle/MossyLogObstacle" method="disable_mossy_log"]
 [connection signal="pressed" from="HiddenTreeBlockPuzzle/PuzzleButton" to="HiddenTreeBlockPuzzle/SecretTree" method="disable_tree"]

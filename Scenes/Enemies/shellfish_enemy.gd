@@ -8,6 +8,15 @@ extends CharacterBody2D
 var target: Node2D
 var is_dead: bool = false
 
+func _ready():
+	# Enemies killed earlier stay dead when the level is loaded again.
+	if SceneManager.is_enemy_killed(get_enemy_id()):
+		queue_free()
+
+# Unique per enemy, e.g. "/root/FirstScene/Enemies/ShellfishEnemy3".
+func get_enemy_id() -> String:
+	return str(get_path())
+
 func _physics_process(delta):
 	if HP <= 0:
 		return
@@ -72,7 +81,7 @@ func play_damage_sfx():
 	
 func die():
 	is_dead = true
-	SceneManager.register_kill()
+	SceneManager.register_kill(get_enemy_id())
 	$GPUParticles2D.emitting = true
 	$AnimatedSprite2D.visible = false
 	$CollisionShape2D.set_deferred("disabled", true)

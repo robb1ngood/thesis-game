@@ -10,16 +10,16 @@ func _process(delta):
 	if Input.is_action_just_pressed("interact") and can_interact:
 		$AudioStreamPlayer2D.play()
 		if is_activated:
-			activate_switch()
-		else:
 			deactivate_switch()
+		else:
+			activate_switch()
 			
 func activate_switch():
-	$AnimatedSprite2D.play("acitvated")
+	$AnimatedSprite2D.play("activated")
+	is_activated = true
 	switch_activated.emit()
-	is_activated = false
 
 func deactivate_switch():
 	$AnimatedSprite2D.play("deactivated")
+	is_activated = false
 	switch_deactivated.emit()
-	is_activated = true

@@ -5,7 +5,8 @@ var required_kills: int = 1
 
 func _ready():
 	# The kill count lives in SceneManager, so it survives scene reloads.
-	if SceneManager.enemies_killed >= required_kills:
+	if SceneManager.is_quest_complete(SceneManager.LUMBERJACK_LOGS_QUEST) \
+			or SceneManager.enemies_killed >= required_kills:
 		disable_logs()
 	else:
 		SceneManager.enemy_killed.connect(_on_enemy_killed)
@@ -16,5 +17,6 @@ func _on_enemy_killed(total: int):
 		SceneManager.enemy_killed.disconnect(_on_enemy_killed)
 
 func disable_logs():
+	SceneManager.complete_quest(SceneManager.LUMBERJACK_LOGS_QUEST)
 	visible = false
 	collision_enabled = false

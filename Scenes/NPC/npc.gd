@@ -6,14 +6,14 @@ var can_interact: bool = false
 
 @export var is_endgame_npc: bool = false
 
-# Ending values
-var required_treasure: int = 1
+@export var required_treasure: int = 1
+
 var not_enough_treasure_lines: Array[String] = [
 	"Bring me 10 treasures and I'll sell you this boat to go home.",
 	"Keep looking!",
 ]
 var enough_treasure_lines: Array[String] = [
-	"You found them all!",
+	"You have enough coins!",
 	"The boat is all yours!",
 ]
 

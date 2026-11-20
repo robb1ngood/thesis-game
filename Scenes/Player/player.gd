@@ -10,6 +10,7 @@ var is_attacking: bool = false
 var can_interact: bool = false
 
 func _ready():
+	has_weapon = SceneManager.has_weapon
 	update_treasure_label()
 	update_hp_bar()
 	if SceneManager.player_spawn_position != Vector2(0, 0):
@@ -81,7 +82,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.can_interact = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group("interactable"):
+	# Don't check the group here: an object can leave the "interactable" group
+	# while the player is still next to it (like the sword stone after pickup),
+	# and can_interact would otherwise stay stuck on true and block attacks.
+	if "can_interact" in body:
 		can_interact = false
 		body.can_interact = false
 
@@ -181,3 +185,4 @@ func _on_attack_duration_timer_timeout() -> void:
 
 func _on_weapon_picked_up():
 	has_weapon = true
+	SceneManager.has_weapon = true

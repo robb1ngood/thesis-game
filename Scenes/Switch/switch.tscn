@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cj108mlww1lbn" path="res://Ninja Adventure - Asset Pack/Sounds/Game/Magic1.wav" id="3_sln40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5yrt"]
-size = Vector2(16, 9)
+size = Vector2(16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sln40"]
 atlas = ExtResource("1_g65jv")
@@ -38,12 +38,12 @@ animations = [{
 script = ExtResource("1_c5yrt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1590059421]
-position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_c5yrt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1888677424]
 sprite_frames = SubResource("SpriteFrames_xbken")
 animation = &"deactivated"
+autoplay = "deactivated"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=580112867]
 stream = ExtResource("3_sln40")
