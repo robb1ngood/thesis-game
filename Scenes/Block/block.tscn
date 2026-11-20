@@ -1,16 +1,47 @@
 [gd_scene format=3 uid="uid://clt45k3ig7x1v"]
 
 [ext_resource type="Texture2D" uid="uid://h0oin280nmvc" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="1_nrueb"]
+[ext_resource type="Texture2D" uid="uid://beksbms3pjfau" path="res://Ninja Adventure - Asset Pack/FX/Particle/RainOnFloor.png" id="2_wyci5"]
+[ext_resource type="Script" uid="uid://bundghgm54cfc" path="res://Scenes/Block/block.gd" id="3_blkgd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_83tkd"]
 bounce = 0.8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tploh"]
-size = Vector2(15, 15)
+size = Vector2(14.5, 14.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s60lj"]
 atlas = ExtResource("1_nrueb")
 region = Rect2(127.95308, 47.63594, 16.576843, 16.292671)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67lhi"]
+atlas = ExtResource("2_wyci5")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mqmb"]
+atlas = ExtResource("2_wyci5")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ji6d"]
+atlas = ExtResource("2_wyci5")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ws31m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67lhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mqmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ji6d")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Block" type="RigidBody2D" unique_id=1812137363 groups=["pushable"]]
 collision_layer = 4
@@ -19,9 +50,18 @@ physics_material_override = SubResource("PhysicsMaterial_83tkd")
 gravity_scale = 0.0
 lock_rotation = true
 linear_damp = 15.0
+script = ExtResource("3_blkgd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1979837609]
 shape = SubResource("RectangleShape2D_tploh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=823322232]
 texture = SubResource("AtlasTexture_s60lj")
+
+[node name="Splash" type="AnimatedSprite2D" parent="." unique_id=805190997]
+visible = false
+position = Vector2(0, -3.0000005)
+scale = Vector2(2.0544748, 2.387467)
+sprite_frames = SubResource("SpriteFrames_ws31m")
+frame = 2
+frame_progress = 1.0

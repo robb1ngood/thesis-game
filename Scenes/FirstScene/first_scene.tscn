@@ -406,7 +406,7 @@ texture = ExtResource("4_7xk3j")
 0:11/0/terrain_set = 0
 
 [sub_resource type="TileSet" id="TileSet_ru3ny"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 32
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain Water"
 terrain_set_0/terrain_0/color = Color(0, 0.39213464, 0.6928924, 1)
@@ -1361,7 +1361,7 @@ position = Vector2(266, 202)
 collision_mask = 12
 
 [node name="Block" parent="HiddenTreeBlockPuzzle" unique_id=1812137363 instance=ExtResource("11_bfnu2")]
-position = Vector2(309, 121)
+position = Vector2(312, 119)
 
 [node name="SecretTree" type="TileMapLayer" parent="HiddenTreeBlockPuzzle" unique_id=70295712]
 y_sort_enabled = true
@@ -1457,7 +1457,6 @@ text = "Hello"
 text = "The Lumberjack"
 
 [node name="Player" parent="ObstacleLayer" unique_id=1382311881 instance=ExtResource("5_htmef")]
-position = Vector2(-736, 96)
 
 [node name="Camera2D" type="Camera2D" parent="ObstacleLayer/Player" unique_id=1447214303]
 position = Vector2(3.3333435, 0)
@@ -1480,6 +1479,10 @@ chest_name = "maze_chest"
 [node name="TreasureChestLog" parent="ObstacleLayer" unique_id=1596513919 instance=ExtResource("12_bfnu2")]
 position = Vector2(-456, 200)
 chest_name = "log_chest"
+
+[node name="TreasureChestLog2" parent="ObstacleLayer" unique_id=76653841 instance=ExtResource("12_bfnu2")]
+position = Vector2(664, 593)
+chest_name = "enemy_chest"
 
 [node name="DungeonLockedDoor" parent="." unique_id=619921547 instance=ExtResource("14_8u4fi")]
 position = Vector2(-727, 25)
