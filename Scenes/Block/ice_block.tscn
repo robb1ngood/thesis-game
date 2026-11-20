@@ -4,7 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://h0oin280nmvc" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetDungeon.png" id="2_8ron8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k54aw"]
-bounce = 0.05
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ron8"]
+size = Vector2(16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5yqkf"]
 atlas = ExtResource("2_8ron8")
@@ -15,9 +18,8 @@ physics_material_override = SubResource("PhysicsMaterial_k54aw")
 linear_damp = 0.2
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1979837609]
-position = Vector2(-0.25, 0.25)
+shape = SubResource("RectangleShape2D_8ron8")
 
 [node name="Sprite2D" parent="." index="1" unique_id=823322232]
-position = Vector2(-0.25, 0)
 scale = Vector2(0.96666664, 1)
 texture = SubResource("AtlasTexture_5yqkf")
