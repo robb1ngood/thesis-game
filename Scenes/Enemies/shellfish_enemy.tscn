@@ -165,7 +165,7 @@ initial_velocity_max = 60.0
 gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 4.0
-color = Color(0.6437479, 0.89588636, 0.9605345, 1)
+color = Color(0.99999994, 0.1943762, 0.14415294, 1)
 
 [node name="ShellfishEnemy" type="CharacterBody2D" unique_id=222290903]
 collision_layer = 16

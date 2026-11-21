@@ -7,7 +7,7 @@
 friction = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ron8"]
-size = Vector2(16, 16)
+size = Vector2(14, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5yqkf"]
 atlas = ExtResource("2_8ron8")
@@ -16,6 +16,7 @@ region = Rect2(0, 32, 16, 16)
 [node name="IceBlock" unique_id=1812137363 instance=ExtResource("1_4tccs")]
 physics_material_override = SubResource("PhysicsMaterial_k54aw")
 linear_damp = 0.2
+center_on_tiles = true
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1979837609]
 shape = SubResource("RectangleShape2D_8ron8")

@@ -8,6 +8,7 @@ class_name Player
 var has_weapon: bool = false
 var is_attacking: bool = false
 var can_interact: bool = false
+var ignore_interact_press: bool = false
 
 func _ready():
 	has_weapon = SceneManager.has_weapon
@@ -27,7 +28,11 @@ func _physics_process(delta):
 	
 	update_treasure_label()
 	
-	if Input.is_action_just_pressed("interact") and not can_interact and has_weapon:
+	# The button press that picks up the sword shouldn't also swing it.
+	if not Input.is_action_pressed("interact"):
+		ignore_interact_press = false
+
+	if Input.is_action_just_pressed("interact") and not can_interact and has_weapon and not ignore_interact_press:
 		attack()
 	
 	move_and_slide()
@@ -184,5 +189,6 @@ func _on_attack_duration_timer_timeout() -> void:
 		$AnimatedSprite2D.play("move_down")
 
 func _on_weapon_picked_up():
+	ignore_interact_press = true
 	has_weapon = true
 	SceneManager.has_weapon = true

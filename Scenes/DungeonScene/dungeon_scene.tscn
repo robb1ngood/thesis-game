@@ -925,7 +925,7 @@ position = Vector2(-72, -212)
 position = Vector2(-127, -8)
 
 [node name="Player" parent="." unique_id=1382311881 instance=ExtResource("1_xuufh")]
-position = Vector2(536, -48)
+position = Vector2(63, -187)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=486764578]
 visible = false
@@ -988,7 +988,8 @@ speed = 45.0
 HP = 3
 
 [node name="IceBlock" parent="." unique_id=2007355525 instance=ExtResource("8_odg1s")]
-position = Vector2(550, -66)
+position = Vector2(84, -200)
+continuous_cd = 2
 
 [connection signal="pressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_pressed"]
 [connection signal="unpressed" from="PuzzleButton" to="LockedDoor" method="_on_puzzle_button_unpressed"]
