@@ -118,7 +118,7 @@ func _on_hitbox_area_2d_body_entered(body: Node2D) -> void:
 	
 func die():
 	$AnimatedSprite2D.play("death")
-	if not $DeathTimer.is_stopped():
+	if $DeathTimer.is_stopped():
 		$DeathTimer.start()
 	
 func _on_death_timer_timeout() -> void:
