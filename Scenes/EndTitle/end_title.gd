@@ -37,3 +37,4 @@ func _on_play_again_pressed() -> void:
 	SceneManager.player_hp = 4
 	SceneManager.player_spawn_position = Vector2.ZERO
 	get_tree().change_scene_to_file(restart_scene_path)
+	SceneManager.reset_run()

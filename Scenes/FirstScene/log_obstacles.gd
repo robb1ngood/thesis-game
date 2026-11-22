@@ -1,7 +1,7 @@
 extends TileMapLayer
 
 # How many enemies the player has to slay before the logs disappear.
-var required_kills: int = 12
+@export var required_kills: int = 12
 
 func _ready():
 	# The kill count lives in SceneManager, so it survives scene reloads.

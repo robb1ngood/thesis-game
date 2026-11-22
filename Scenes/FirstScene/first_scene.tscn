@@ -1331,7 +1331,7 @@ position = Vector2(-438, 488)
 
 [node name="TreasureChestIce" parent="IceBlockPuzzle" unique_id=1470498189 instance=ExtResource("12_bfnu2")]
 position = Vector2(22, 142)
-chest_name = "cave_hidden_chest"
+chest_name = "ice_chest"
 
 [node name="MossyLogObstacle" type="TileMapLayer" parent="IceBlockPuzzle" unique_id=1458146845]
 y_sort_enabled = true
