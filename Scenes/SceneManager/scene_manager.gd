@@ -1,27 +1,33 @@
 extends Node2D
 
+# Globális állapot (SceneManager néven autoloadként fut). Itt tároljuk mindazt, aminek jelenetváltás vagy a jelenet újratöltése után is meg kell maradnia.
+
+# Minden legyőzött ellenség után kiküldjük, az addigi legyőzések számával.
 signal enemy_killed(total: int)
 
+# Hova kerüljön a játékos a következő jelenetben (Vector2.ZERO: a jelenetben beállított helyre).
 var player_spawn_position: Vector2
 var player_hp: int = 4
 
+# A kinyitott ládák neve; a tömb mérete egyben a begyűjtött kincsek száma.
 var opened_chests: Array[String] = []
 
 var enemies_killed: int = 0
 var completed_quests: Array[String] = []
 
-# Node paths of enemies that have died, so they stay dead after a level change.
+# A legyőzött ellenségek node-útvonalai, hogy pályaváltás után is halottak maradjanak.
 var killed_enemies: Array[String] = []
 
-# Node paths of doors that should stay open between levels.
+# Azoknak az ajtóknak a node-útvonalai, amelyeknek pályák között is nyitva kell maradniuk.
 var opened_doors: Array[String] = []
 
-# Whether the player has picked up the sword. Carries over between levels.
+# Felvette-e már a játékos a kardot. Pályák között is megmarad.
 var has_weapon: bool = false
 
-# Quest id used for the lumberjack's log obstacles.
+# A favágó farönk-akadályaihoz tartozó küldetés azonosítója.
 const LUMBERJACK_LOGS_QUEST: String = "lumberjack_logs"
 
+# Elmenti a legyőzött ellenséget, és növeli a számlálót.
 func register_kill(enemy_id: String = "") -> void:
 	if enemy_id != "" and not killed_enemies.has(enemy_id):
 		killed_enemies.append(enemy_id)
@@ -45,6 +51,7 @@ func complete_quest(quest_id: String) -> void:
 func is_quest_complete(quest_id: String) -> bool:
 	return completed_quests.has(quest_id)
 
+# Mindent visszaállít a kezdőállapotba (új játék indításakor).
 func reset_run() -> void:
 	opened_chests.clear()
 	completed_quests.clear()
